@@ -1,0 +1,332 @@
+/*
+Propiedades de Flexbox:
+
+justify-content: flex-start (es default) | flex-end | space-between | space-around | center |
+
+align-items: stretch (es default) | center | flex-end | center | baseline |
+
+display: flex; me alinea los items.
+flex-wrap: wrap; me manda abajo los items segun el tamaño de la pantalla.
+justify-content: center; me centra los items.
+align-items: center; me alinea los items a los alto.
+
+
+flex-direction: column;
+flex-direction: row;
+
+display: block;--->ocupa todo el ancho
+display: inline-block;--->ocupa el ancho de su contenido
+display: none;--->desaparece contenido
+
+position: static;--->
+position: relative;--->manejo la posicion con top,right,bottom,left
+position: absolute;--->no respetan al contenedor padre, sino q se mueve al elemento mas cercano con posicion relativa
+position: fixed;--->nos sirve para el menu, se mantiene fija
+
+z-index: numero de apilacion de los elementos, van de 1 a N numeros
+
+Aguamarina = #00AAA6
+GrisAzulado = #283C48
+CelesteOscuro = #008FD5
+morado = #9E1847
+verderOscuro = #4E825F
+verdeClaro = #9CCDA7
+
+font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Lato', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;
+font-family: 'Nunito', sans-serif;
+*/
+
+@import "../css/icons.css";
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  padding: 0;
+  font-size: 18px;
+}
+
+/*Utilities*/
+.u-title{
+  color: #772A1E;
+  font-size: 2em;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+
+.MainMenu{
+  background: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  z-index: 11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.MainMenu-image{
+  margin-bottom: -.25em;
+  height: 60px;
+  width: 250px;
+}
+
+.MainMenu-list{
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+.MainMenu-item{
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: .5em;
+}
+
+.MainMenu-link{
+  color: #EFEFEF;
+  text-decoration: none;
+  padding: 0.5em;
+}
+
+
+.Header-imageContainer, .Header-name, .Header-carrera{
+    display: flex;
+    justify.content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Header-imageContainer{
+  background-image: url('../img/home.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /*ancho de pantalla visible*/
+}
+
+.Header-name, .Header-carrera{
+  color: white;
+  font-weight: bold;
+}
+
+.Header-image{
+ /* border: 3px solid white;*/
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  margin: 8.5em 0 0 0;
+}
+
+.Header-name{
+  font-size:1.8em;
+  margin: 0.2em;
+}
+
+.Header-carrera{
+  font-size: .7em;
+}
+
+/*Profile*/
+.Profile{
+  padding: 0 5em;
+  display: flex;
+  justify.content: center;
+  align-items: center;
+  flex-direction: column;
+  background: white;
+  /*background-repeat: no-repeat;*/
+  /*background-position: center;*/
+  background-size: cover;
+  min-height: 100vh; /*ancho de pantalla visible*/
+}
+
+.Profile-title{
+  padding: 1.8em 0 0 0 ;
+  margin: 0;
+  color: #262525;
+}
+
+.Profile-description{
+  font-size: 22px;
+  color: #262525;
+  text-align: center;
+}
+
+.Profile-span{
+  font-size: 40px;
+  background: #40759E;
+  color: #fff;
+  margin: 1em 0 2em 0;
+  padding: .3em 1.5em;
+  text-decoration:none;
+  box-shadow: 0 0 0 10px #fff;
+  box-shadow: 0 0 0 1px #ccc;
+  box-shadow: 0 0 20px 0 #000;
+}
+
+.SocialMedia{
+  margin: -3em 0 0 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.Profile-link{
+  color: #ccc;
+  font-size: 2em;
+  padding: 0 .5em;
+  text-decoration: none;
+}
+
+
+/*Portfolio*/
+.Work-title{
+  padding: 1.8em 0 0 0;
+  color: black;
+ }
+
+.Work{
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 5em;
+  justify-content: center;
+  min-height: 100vh; /*ancho de pantalla visible*/
+}
+
+.Work-list{
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+ }
+
+.Work-item{
+  position: relative;
+  width: 300px;
+  height: 280px;
+  overflow: hidden;
+  margin: .5em;
+}
+
+.Work-info{
+  display: none;
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  width: 300px;
+  color: #FFF;
+  padding: 31% 0px;
+  text-align: center;
+}
+
+.Work-info:hover{
+  background: rgba(0, 0, 0, .8);
+  transition: all .6s;
+}
+
+.Work-item:hover .Work-info{
+  display: block;
+}
+
+
+/*contacto*/
+.Footer{
+  background-image: url('../img/portada.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh; /*ancho de pantalla visible*/
+}
+
+.Form{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Footer-title{
+  color: #EFEFEF;
+  padding: 1.7em 0 0 0;
+  margin: 0;
+}
+
+.Footer-subtitulo{
+  color: #ccc;
+  font-size: 22px;
+  padding: 0 2em 1em 2em;
+  text-align: center;
+}
+
+.Footer-formInput,
+.Footer-textarea,
+.Footer-button{
+  border: none;
+  margin: 0.1em;
+  padding: .6em;
+}
+
+.Footer-button{
+  background: #40759E ;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.Footer-end{
+  background: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2em;
+}
+
+.Footer-end-image{
+  border: 2px solid white;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+
+.icon-end{
+  color: #ccc;
+  font-size: 2em;
+  margin: 0.4em 0;
+}
+
+.fa{
+  color: white;
+  padding: .3em 2em;
+  text-decoration: none;
+}
+
+.fa-facebook{
+  background: #2A447B;
+}
+
+.fa-twitter{
+  background: #55ACEE;
+}
+
+.fa-github{
+  background: #333333;
+}
+
+.fa-skype{
+  background: #00AFF0;
+}
+
+.fa-qq{
+  background: #FFFC00;
+}
